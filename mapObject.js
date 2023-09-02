@@ -1,8 +1,16 @@
-let cb = require('./test/testMapObject')
-function mapObject(obj, cb) {
-    for(let i in obj){
-        cb(i);
-    }
+function cb(value){
+    return value+"changes";
 }
 
-module.exports = mapObject;
+function mapObject(obj, cb) {
+    const result = {};
+    for(let key in obj){
+        const oldValue = obj[key];
+        const newValue = cb(oldValue);
+        result[key] = newValue;
+    }
+    return result;
+}
+
+module.exports.mapObject = mapObject;
+module.exports.cb = cb;

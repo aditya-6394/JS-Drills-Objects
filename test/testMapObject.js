@@ -1,9 +1,5 @@
 const testObject = { name: 'Bruce Wayne', age: 36, location: 'Gotham' };
-let mapObject = require('../mapObject');
-let arr=[];
-function cb(i){
-    arr.push(i);
-}
-mapObject(testObject,cb);
-console.log(arr);
-module.exports=cb;
+let obj = require('../mapObject');
+// let cb = require('../mapObject')
+
+console.log(obj.mapObject(testObject,obj.cb));
