@@ -1,9 +1,9 @@
 function invert(obj) {
-    let inv_obj = {};
+    let invObj = {};
     for(let k in obj){
-        inv_obj[obj[k]] = k;
+        invObj[obj[k]] = k;
     }
-    return inv_obj;
+    return invObj;
 }
 
 module.exports = invert;
